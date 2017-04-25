@@ -422,9 +422,9 @@ public extension FusumaViewController {
     
     public func changeMode(_ mode: FusumaMode) {
 
-        //if self.mode == mode {
-        //    return
-        //}
+        if self.mode == mode {
+            return
+        }
         
         //operate this switch before changing mode to stop cameras
         switch self.mode {
@@ -446,17 +446,29 @@ public extension FusumaViewController {
             titleLabel.text = NSLocalizedString(fusumaCameraRollTitle, comment: fusumaCameraRollTitle)
             
             highlightButton(libraryButton)
+            
+            dishighlightButtons()
+            highlightButton(libraryButton)
+            
             self.view.bringSubview(toFront: photoLibraryViewerContainer)
         case .camera:
             titleLabel.text = NSLocalizedString(fusumaCameraTitle, comment: fusumaCameraTitle)
             
             highlightButton(cameraButton)
+            
+            dishighlightButtons()
+            highlightButton(cameraButton)
+            
             self.view.bringSubview(toFront: cameraShotContainer)
             cameraView.startCamera()
         case .video:
             titleLabel.text = fusumaVideoTitle
             
             highlightButton(videoButton)
+            
+            dishighlightButtons()
+            highlightButton(videoButton)
+            
             self.view.bringSubview(toFront: videoShotContainer)
             videoView.startCamera()
         default:
