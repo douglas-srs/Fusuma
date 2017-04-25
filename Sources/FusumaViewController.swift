@@ -408,7 +408,7 @@ extension FusumaViewController: FSAlbumViewDelegate, FSCameraViewDelegate, FSVid
     
 }
 
-private extension FusumaViewController {
+public extension FusumaViewController {
     
     func stopAll() {
         
