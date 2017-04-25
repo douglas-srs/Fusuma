@@ -448,6 +448,7 @@ public extension FusumaViewController {
             highlightButton(libraryButton)
             
             self.view.bringSubview(toFront: photoLibraryViewerContainer)
+            break
         case .camera:
             titleLabel.text = NSLocalizedString(fusumaCameraTitle, comment: fusumaCameraTitle)
             
@@ -455,6 +456,7 @@ public extension FusumaViewController {
             
             self.view.bringSubview(toFront: cameraShotContainer)
             cameraView.startCamera()
+            break
         case .video:
             titleLabel.text = fusumaVideoTitle
             
@@ -462,6 +464,7 @@ public extension FusumaViewController {
             
             self.view.bringSubview(toFront: videoShotContainer)
             videoView.startCamera()
+            break
         default:
             break
         }
