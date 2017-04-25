@@ -249,7 +249,7 @@ public class FusumaViewController: UIViewController {
             cameraView.croppedAspectRatioConstraint?.isActive = false
         }
         
-        changeMode(defaultMode)
+        //changeMode(defaultMode)
         
     }
     
