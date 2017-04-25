@@ -420,7 +420,7 @@ private extension FusumaViewController {
         self.cameraView.stopCamera()
     }
     
-    func changeMode(_ mode: FusumaMode) {
+    public func changeMode(_ mode: FusumaMode) {
 
         if self.mode == mode {
             return
