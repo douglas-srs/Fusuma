@@ -422,9 +422,9 @@ public extension FusumaViewController {
     
     public func changeMode(_ mode: FusumaMode) {
 
-        if self.mode == mode {
-            return
-        }
+        //if self.mode == mode {
+        //    return
+        //}
         
         //operate this switch before changing mode to stop cameras
         switch self.mode {
