@@ -30,11 +30,10 @@ internal extension UIColor {
 
 extension UIView {
     
-    func addBottomBorder(_ color: UIColor, width: CGFloat) {
+    func addBottomBorder(_ color: UIColor, width: CGFloat, frameWidth: CGFloat) {
         let border = CALayer()
         border.borderColor = color.cgColor
-        self.setNeedsDisplay()
-        border.frame = CGRect(x: 0, y: self.frame.size.height - width, width: self.frame.size.width, height: width)
+        border.frame = CGRect(x: 0, y: self.frame.size.height - width, width: frameWidth, height: width)
         border.borderWidth = width
         self.layer.addSublayer(border)
     }
