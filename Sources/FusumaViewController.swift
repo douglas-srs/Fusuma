@@ -147,7 +147,7 @@ public class FusumaViewController: UIViewController {
         videoView.delegate = self
 
         menuView.backgroundColor = fusumaBackgroundColor
-        menuView.addBottomBorder(UIColor.black, width: 1.0)
+        menuView.addBottomBorder(UIColor.black, width: 1.0, frameWidth: menuView.frame.size.width)
         
         let bundle = Bundle(for: self.classForCoder)
         
@@ -447,16 +447,10 @@ public extension FusumaViewController {
             
             highlightButton(libraryButton)
             
-            dishighlightButtons()
-            highlightButton(libraryButton)
-            
             self.view.bringSubview(toFront: photoLibraryViewerContainer)
         case .camera:
             titleLabel.text = NSLocalizedString(fusumaCameraTitle, comment: fusumaCameraTitle)
             
-            highlightButton(cameraButton)
-            
-            dishighlightButtons()
             highlightButton(cameraButton)
             
             self.view.bringSubview(toFront: cameraShotContainer)
@@ -464,9 +458,6 @@ public extension FusumaViewController {
         case .video:
             titleLabel.text = fusumaVideoTitle
             
-            highlightButton(videoButton)
-            
-            dishighlightButtons()
             highlightButton(videoButton)
             
             self.view.bringSubview(toFront: videoShotContainer)
@@ -545,6 +536,14 @@ public extension FusumaViewController {
         
         button.tintColor = fusumaTintColor
         
-        button.addBottomBorder(fusumaTintColor, width: 3)
+        var totalButtons : CGFloat = 2
+        
+        if (videoButton) != nil {
+           totalButtons = 3
+        }
+        
+        let frameWidth = button.superview!.frame.size.width/totalButtons
+        
+        button.addBottomBorder(fusumaTintColor, width: 3, frameWidth: frameWidth)
     }
 }
